@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useState} from "react";
 function App() {
+
+  const [slices, setSlices] = useState(0);
+
+  const add = () => {
+    setSlices((prevSlices) => prevSlices +1);
+
+  }
+  const minus = () => {
+    setSlices((prevSlices) => prevSlices -1);
+    
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {slices}
+      <div style={{textAlign:"center"}}>
+
+      <button onClick={add}> Add</button>
+      <button onClick={minus}> Minus</button>
+      </div>
+
+      
     </div>
   );
 }
